@@ -76,6 +76,7 @@ class CommentRepositoryPostgres extends CommentRepository {
       (row) => new Comment({
         ...row,
         isDelete: row.is_delete,
+        likeCount: 0,
       }),
     );
   }

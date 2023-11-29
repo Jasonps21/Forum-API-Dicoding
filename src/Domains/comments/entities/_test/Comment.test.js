@@ -24,6 +24,7 @@ describe('Comment entities', () => {
       date: '2021-08-08T07:59:57.000Z',
       content: 'sebuah comment',
       isDelete: 'false',
+      likeCount: '123',
     };
 
     // Action and Assert
@@ -38,6 +39,7 @@ describe('Comment entities', () => {
       date: '2021-08-08T07:59:57.000Z',
       content: 'sebuah comment',
       isDelete: false,
+      likeCount: 0,
     };
 
     // Action
@@ -58,6 +60,7 @@ describe('Comment entities', () => {
       date: '2021-08-08T07:59:57.000Z',
       content: 'sebuah comment',
       isDelete: true,
+      likeCount: 0,
     };
 
     // Action
@@ -78,6 +81,7 @@ describe('Comment entities', () => {
       date: '2021-08-08T07:59:57.000Z',
       content: 'sebuah comment',
       isDelete: false,
+      likeCount: 0,
     };
 
     // Action
@@ -94,6 +98,7 @@ describe('Comment entities', () => {
       date: '2021-08-08T07:59:57.000Z',
       content: 'sebuah comment',
       isDelete: true,
+      likeCount: 0,
     };
 
     // Action
@@ -121,6 +126,7 @@ describe('Comment entities', () => {
       date: '2021-08-08T07:59:57.000Z',
       content: 'sebuah comment',
       isDelete: true,
+      likeCount: 0,
     };
 
     const replyPayload = {

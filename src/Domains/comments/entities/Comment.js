@@ -5,13 +5,14 @@ class Comment {
     this._verifyPayload(payload);
 
     const {
-      id, username, date, content, isDelete,
+      id, username, date, content, isDelete, likeCount,
     } = payload;
 
     this.id = id;
     this.username = username;
     this.date = date;
     this.content = isDelete ? '**komentar telah dihapus**' : content;
+    this.likeCount = likeCount;
     this.replies = [];
   }
 
@@ -19,13 +20,14 @@ class Comment {
    * note: no need to catch as ClientError, because this is internal error.
    */
   _verifyPayload({
-    id, username, date, content, isDelete,
+    id, username, date, content, isDelete, likeCount,
   }) {
-    if (!id || !username || !date || !content || isDelete === undefined || isDelete === null) {
+    if (!id || !username || !date || !content || isDelete === undefined || isDelete === null
+      || likeCount === undefined) {
       throw new Error('COMMENT.NOT_CONTAIN_NEEDED_PROPERTY');
     }
 
-    if (typeof id !== 'string' || typeof username !== 'string' || typeof date !== 'string' || typeof content !== 'string' || typeof isDelete !== 'boolean') {
+    if (typeof id !== 'string' || typeof username !== 'string' || typeof date !== 'string' || typeof content !== 'string' || typeof isDelete !== 'boolean' || typeof likeCount !== 'number') {
       throw new Error('COMMENT.NOT_MEET_DATA_TYPE_SPECIFICATION');
     }
   }

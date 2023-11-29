@@ -103,6 +103,7 @@ describe('Thread entities', () => {
         date: '2021-08-08T07:59:18.807Z',
         content: 'sebuah comment',
         isDelete: false,
+        likeCount: 0,
       }),
     ];
 
